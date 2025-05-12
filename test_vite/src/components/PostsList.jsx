@@ -1,39 +1,32 @@
 import Post from './Post';
 import styles from './PostsList.module.css';
-import NewPost from './NewPost';
-import { useState } from 'react';
-import Modal from './Modal';
+import { useLoaderData } from 'react-router-dom';
 
 function PostsList() {
-  const [name, setName] = useState('');
-  const [body, setBody] = useState('');
-  const [posts, setPosts] = useState([]);
-  function changeBodyHandler(event) {
-    setBody(event.target.value);
+  const posts = useLoaderData();
+
+  function addPostHandler(postData) {
+    setPosts((prevPosts) => [postData, ...prevPosts]);
+    fetch('http://localhost:8080/posts', {
+      method: 'POST',
+      body: JSON.stringify(postData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
-  function changeNameHandler(event) {
-    setName(event.target.value);
-  }
-
-  function onSavePost(event) {
-    event.preventDefault();
-    setPosts([...posts, { name, body }]);
-  }
   return (
     <>
-      <Modal>
-        <NewPost
-          changeBodyHandler={changeBodyHandler}
-          changeNameHandler={changeNameHandler}
-          onSavePost={onSavePost}
-        />
-      </Modal>
-      <ul className={styles.posts}>
-        {posts.map((post) => (
-          <Post name={post.name} content={post.body} />
-        ))}
-      </ul>
+      {posts.length > 0 ? (
+        <ul className={styles.posts}>
+          {posts.map((post) => (
+            <Post key={post.name} name={post.name} content={post.body} />
+          ))}
+        </ul>
+      ) : (
+        <h2 style={{ textAlign: 'center' }}>No posts yet</h2>
+      )}
     </>
   );
 }

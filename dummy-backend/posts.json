@@ -1,0 +1,12 @@
+{
+  "posts": [
+    { "name": "ds", "body": "dsa", "id": "0.9708278818910596" },
+    { "name": "dsa", "body": "dsa", "id": "0.5703460468010559" },
+    { "name": "dsa", "body": "dsa", "id": "0.8902593756224013" },
+    {
+      "body": "This course is hopefully very helpful to you!",
+      "author": "Maximilian",
+      "id": "post-1"
+    }
+  ]
+}
