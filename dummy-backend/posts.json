@@ -1,12 +1,1 @@
-{
-  "posts": [
-    { "name": "ds", "body": "dsa", "id": "0.9708278818910596" },
-    { "name": "dsa", "body": "dsa", "id": "0.5703460468010559" },
-    { "name": "dsa", "body": "dsa", "id": "0.8902593756224013" },
-    {
-      "body": "This course is hopefully very helpful to you!",
-      "author": "Maximilian",
-      "id": "post-1"
-    }
-  ]
-}
+{"posts":[{"name":"jhkl","body":"jkl","id":"0.47790368471105915"},{"name":"000","body":"000","id":"0.07577537772912035"},{"name":"999","body":"999","id":"0.7697435924252938"},{"name":"dsa","body":"dsa","id":"0.15215659192447495"}]}

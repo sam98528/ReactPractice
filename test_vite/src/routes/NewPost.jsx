@@ -1,52 +1,40 @@
 import styles from './NewPost.module.css';
 import Modal from '../components/Modal';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-function NewPost({ onSavePost }) {
-  const [name, setName] = useState('');
-  const [body, setBody] = useState('');
-  const navigate = useNavigate();
+import { Link, Form, redirect } from 'react-router-dom';
 
-  function changeBodyHandler(event) {
-    setBody(event.target.value);
-  }
-
-  function changeNameHandler(event) {
-    setName(event.target.value);
-  }
-
-  function onSavePost(event) {
-    event.preventDefault();
-    const postData = { name, body };
-    onSavePost(postData);
-    navigate('..');
-  }
-
+function NewPost() {
   return (
     <Modal>
-      <form className={styles.form} onSubmit={onSavePost}>
+      <Form method='post' className={styles.form}>
         <p>
           <label htmlFor='name'>Your name</label>
-          <input
-            type='text'
-            id='name'
-            required
-            rows={3}
-            onChange={changeNameHandler}
-          />
+          <input type='text' id='name' name='name' required rows={3} />
         </p>
         <p>
           <label htmlFor='body'>Text</label>
-          <textarea id='body' name='body' onChange={changeBodyHandler} />
+          <textarea id='body' name='body' />
         </p>
         <div className={styles.actions}>
           <Link to='..' type='button'>
             Cancel
           </Link>
-          <button onClick={onSavePost}>Submit</button>
+          <button>Submit</button>
         </div>
-      </form>
+      </Form>
     </Modal>
   );
 }
 export default NewPost;
+export async function action({ request }) {
+  const formData = await request.formData();
+  const postData = Object.fromEntries(formData);
+
+  await fetch('http://localhost:8080/posts', {
+    method: 'POST',
+    body: JSON.stringify(postData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  return redirect('/');
+}
