@@ -1,0 +1,87 @@
+.header {
+  width: var(--container-width);
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  width: 270px;
+  flex: 1;
+}
+
+.searchBar {
+  background-color: white;
+  border: 1px solid green;
+  border-radius: 52px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: 46px;
+  flex: 2;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  padding-left: 1.5em;
+}
+
+.searchInput::placeholder {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, Malgun Gothic,
+    맑은 고딕, 돋움, dotum, 굴림, gulim, Arial, sans-serif, Apple SD Gothic Neo !important;
+  font-size: 14px;
+  color: #999;
+}
+
+.searchButton {
+  width: 52px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+img.searchIcon {
+  width: 24px;
+  height: 24px;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: none;
+}
+
+.menuButtons * {
+  background-color: transparent;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, Malgun Gothic,
+    맑은 고딕, 돋움, dotum, 굴림, gulim, Arial, sans-serif, Apple SD Gothic Neo !important;
+}
+
+.menuButtons {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+  flex-shrink: 0; /* 줄어들지 않게 함 */
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+/* .recentImage {
+  width: 22px;
+  height: 22px;
+  border: 1px solid black;
+  border-radius: 8px;
+} */

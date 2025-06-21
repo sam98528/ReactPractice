@@ -1,0 +1,47 @@
+.navBar * {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.navBar {
+  width: var(--container-width);
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 30px;
+  align-items: center;
+  border-bottom: 0.5px solid #eeeeee;
+}
+.navBarMenu {
+  color: black;
+}
+
+.allCategory {
+  width: 201px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  gap: 4px;
+  box-sizing: border-box;
+  background-color: #06b87f;
+  border: 1px solid #06b87f;
+  padding-inline-start: 1em;
+  padding-inline-end: 1em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 11px 16px;
+}
+
+.navBarMore {
+  font-weight: 100;
+  color: #2f2e2e5c;
+  font-size: 14px;
+  line-height: 44px;
+  padding: 0 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

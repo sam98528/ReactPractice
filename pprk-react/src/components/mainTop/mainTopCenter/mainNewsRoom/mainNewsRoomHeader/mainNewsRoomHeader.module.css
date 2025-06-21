@@ -1,0 +1,119 @@
+.newsRoomMenuContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.newsRoomTitleMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.newsRoomMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.title * {
+  color: #0f0f0f;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 34px;
+}
+.title a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .menuItemContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #444444;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+} */
+
+.newsRoomSeparator {
+  width: 1px;
+  height: 0.8em;
+  background-color: #ddd;
+  margin: 0 8px;
+  align-items: center;
+}
+
+.newsRoomPagingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.newsRoomPagingContainer span {
+  font-size: 14px;
+  line-height: 20px;
+  color: #2f2e2e5c;
+  align-self: center;
+}
+
+.newsRoomPagingButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsRoomMenuContainer button {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 1px solid #c6c6c6;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #c6c6c6;
+}
+
+.leftButton {
+  border-radius: 4px 0 0 4px;
+}
+
+.rightButton {
+  border-radius: 0 4px 4px 0;
+  margin-left: -1px;
+}
+
+.stopButton {
+  border-radius: 4px;
+}
+
+.active {
+  color: #06b87f;
+}
+
+.newsRoomContainer {
+  background-color: red;
+}
+
+.newsRoomMenus {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #444444;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

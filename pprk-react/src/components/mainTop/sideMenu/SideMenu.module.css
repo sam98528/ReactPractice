@@ -1,0 +1,23 @@
+.sideMenu {
+  width: 201px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+  background-color: #06b87f;
+  border: 1px solid #06b87f;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 14px 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-inline-start: 1em;
+  padding-inline-end: 1em;
+  box-sizing: border-box;
+}
+
+.sideMenuContainer {
+  width: 100%;
+  display: flex;
+}

@@ -1,0 +1,6 @@
+.mainTop {
+  display: flex;
+  flex-direction: row;
+  height: 484px;
+  width: var(--container-width);
+}
