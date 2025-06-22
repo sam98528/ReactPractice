@@ -1,80 +1,85 @@
-import styles from "./mainNewsRoomDataContainer.module.css";
-import { useState } from "react";
+import NewsRoomTempleteA from "./MainNewsRoomTemplete/NewsRoomTempleteA";
+import NewsRoomTempleteB from "./MainNewsRoomTemplete/NewsRoomTempleteB";
+import NewsRoomTempleteC from "./MainNewsRoomTemplete/NewsRoomTempleteC";
 
-const newsRoomData: string[] = [
-  "먹거리",
-  "패션/의류",
-  "PC/노트북",
-  "게임",
-  "스마트기기",
-];
-
-const newsRoomDataImage: [string, string][] = [
+const dummyData: [string, string][] = [
   [
-    "http://img.danawa.com/images/attachFiles/6/824/5823765_1.jpg?fitting=Large|110:78&crop=110:78;*,*",
-    "풀무원, 쫄깃한 메밀면으로 여름 공략…‘가쓰오 냉모밀’ 신제품 출시sadsadsadsadsadsadsadsadsadasdsadasd",
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250617/1750135021352.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "(거의) 완벽한 미니 게이밍 태블릿",
   ],
   [
-    "http://img.danawa.com/images/attachFiles/6/815/5814574_1.jpeg?fitting=Large|110:78&crop=110:78;*,*",
-    "처음 만난 사람을 대비한 신상 주류 5",
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250618/1750231332637.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "7월 공개 확정! 원플러스 새 거 온다",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250617/1750132925332.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "7월 공개 확정! 원플러스 새 거 온다",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250619/1750297298771.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "레트로 디자인 + 파워풀 사운드",
   ],
 ];
 
-const newsRoomDataContent: string[] = [
-  "치열한 일상 속 Chill한 상쾌함을, 스프라이트 제로 Chill",
-  "지평주조, 100주년 기념 하이엔드 막걸리 ‘지평 부의’ 및 ‘지평 석탄’ 출시",
-  "올가, 국산 현미로 만든 뉴트로 스낵 3종 출시",
-  "스타벅스 리스트레토 샷, 네스프레소 캡슐로 출시 집에서도 프리미엄 커피 경험",
-  "풀무원푸드머스, 어린이날 맞아 강화된 '풀스박스' 간식 꾸러미 출시",
+const dummyData2: [string, string][] = [
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250618/1750219036041.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "여름철 음식물 쓰레기 줄이는 꿀팁",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250616/1750058039328.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "아직도 구형 손풍기 쓰세요?",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250617/1750134256434.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "올여름 필수템은 이겁니다.",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250619/1750298662365.gif?fitting=Large|130:92&crop=130:92;*,*",
+    "20만원 대로 로청기 입문 가능!",
+  ],
 ];
 
-function NewsRoomDataContainer() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const handleMenuClick = (index: number) => {
-    setActiveIndex(index);
-  };
+const dummyData3: [string, string][] = [
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250618/1750219036041.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "여름철 음식물 쓰레기 줄이는 꿀팁",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250616/1750058039328.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "아직도 구형 손풍기 쓰세요?",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250617/1750134256434.jpeg?fitting=Large|130:92&crop=130:92;*,*",
+    "올여름 필수템은 이겁니다.",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250619/1750298662365.gif?fitting=Large|130:92&crop=130:92;*,*",
+    "20만원 대로 로청기 입문 가능!",
+  ],
+  [
+    "https://img.danawa.com/images/attachFiles/newsRoom/20250619/1750298662365.gif?fitting=Large|130:92&crop=130:92;*,*",
+    "20만원 대로 로청기 입문 가능!",
+  ],
+];
 
-  return (
-    <div className={styles.newsRoomContainer}>
-      <div className={styles.newsRoomMenuContainer}>
-        {newsRoomData.map((data, index) => (
-          <div key={index} className={styles.newsRoomDataContainer}>
-            <p
-              className={`${styles.menuItem} ${
-                index === activeIndex ? styles.active : ""
-              }`}
-              onClick={() => handleMenuClick(index)}
-            >
-              {data}
-            </p>
-            {index < newsRoomData.length - 1 && (
-              <div className={styles.newsRoomSeparator} />
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div className={styles.newsRoomContentContainer}>
-        <div className={styles.contentWithImageContainer}>
-          {newsRoomDataImage.map((data, index) => (
-            <div key={index} className={styles.contentWithImageData}>
-              <div className={styles.contentImageContainer}>
-                <img src={data[0]} alt="" />
-              </div>
-              <p className={styles.contentTitle}>{data[1]}</p>
-            </div>
-          ))}
-        </div>
-        <div className={styles.contentContainer}>
-          {newsRoomDataContent.map((data, index) => (
-            <div key={index} className={styles.dataContent}>
-              {data}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+function NewsRoomDataContainer({ activeIndex }: { activeIndex: number }) {
+  switch (activeIndex) {
+    case 0:
+      return <NewsRoomTempleteB newsRoomData={dummyData2} />;
+    case 1:
+      return <NewsRoomTempleteB newsRoomData={dummyData} />;
+    case 2:
+      return <NewsRoomTempleteC newsRoomData={dummyData3} />;
+    case 3:
+      return <NewsRoomTempleteB newsRoomData={dummyData} />;
+    case 4:
+      return <NewsRoomTempleteB newsRoomData={dummyData2} />;
+    case 5:
+      return <NewsRoomTempleteA />;
+    default:
+      return <NewsRoomTempleteA />;
+  }
 }
 
 export default NewsRoomDataContainer;

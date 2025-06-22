@@ -1,23 +1,116 @@
 .sideMenu {
   width: 201px;
+  height: 484px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
   color: white;
   background-color: #06b87f;
-  border: 1px solid #06b87f;
+  padding-left: 6px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding: 14px 0;
   flex-grow: 1;
   flex-shrink: 0;
-  padding-inline-start: 1em;
-  padding-inline-end: 1em;
-  box-sizing: border-box;
 }
 
 .sideMenuContainer {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  height: 521px;
+}
+
+.detailMenu {
+  position: absolute;
+  left: 201px;
+  width: 657px;
+  height: 100%;
+  background: rgb(253, 253, 253);
+  box-sizing: content-box;
+  border: 1px solid #06b87f;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 6px 5px 8px -2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+}
+
+.detailMenuLeft {
+  width: 179px;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px 15px 10px 15px;
+  justify-content: start;
+  background: white;
+  color: black;
+  gap: 10px;
+}
+
+.detailMenuDivider {
+  width: 1px;
+  height: 100%;
+  background: #ddd;
+}
+
+.detailMenuRight {
+  width: 199px;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px 15px 10px 15px;
+  justify-content: start;
+  color: black;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.detailMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 2px;
+}
+
+.detailMenuItem * {
+  gap: 2px;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.detailMenuItemCategory {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.detailMenuItemMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.detailMenuRightItem {
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+
+.detailMenuRightItem a {
+  text-decoration: none;
+  color: black;
+  padding-left: -10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

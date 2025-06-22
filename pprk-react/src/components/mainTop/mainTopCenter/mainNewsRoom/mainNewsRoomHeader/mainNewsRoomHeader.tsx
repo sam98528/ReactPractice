@@ -1,36 +1,19 @@
 import styles from "./mainNewsRoomHeader.module.css";
 import { ChevronRight, ChevronLeft, Pause, Play } from "lucide-react";
-import { useState, useEffect } from "react";
 
-const newsRoomMenu: string[] = [
-  "주요이슈",
-  "컴퓨터",
-  "테크",
-  "자동차",
-  "AI",
-  "신상소식",
-];
-
-function MainNewsRoomHeader() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const handleMenuClick = (index: number) => {
-    if (index < 0) {
-      setActiveIndex(newsRoomMenu.length - 1);
-    } else if (index >= newsRoomMenu.length) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(index);
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleMenuClick(activeIndex + 1);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [activeIndex]);
-
+function MainNewsRoomHeader({
+  newsRoomMenu,
+  activeIndex,
+  handleMenuClick,
+  isPaused,
+  setIsPaused,
+}: {
+  newsRoomMenu: string[];
+  activeIndex: number;
+  handleMenuClick: (index: number) => void;
+  isPaused: boolean;
+  setIsPaused: (isPaused: boolean) => void;
+}) {
   return (
     <div className={styles.newsRoomMenuContainer}>
       <div className={styles.newsRoomMenu}>

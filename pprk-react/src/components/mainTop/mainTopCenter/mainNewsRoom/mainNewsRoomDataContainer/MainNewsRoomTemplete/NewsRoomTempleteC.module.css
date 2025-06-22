@@ -1,0 +1,26 @@
+.newsRoomContainer {
+  width: 100%;
+  background-color: white;
+}
+
+.newsRoomContentContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.contentWithImageData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 94px;
+  width: 100%;
+  margin-top: 16px;
+}

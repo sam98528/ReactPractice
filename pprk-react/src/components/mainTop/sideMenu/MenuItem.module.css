@@ -1,9 +1,20 @@
 .menuItem {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   gap: 8px;
+}
+
+.menuItem:hover {
+  background-color: #f0f0f0;
+  color: #06b87f;
 }
 
 .menuItemName {
